@@ -1,0 +1,35 @@
+{
+  "name": "snowpack-rescript-react",
+  "version": "0.0.2",
+  "keywords": [
+    "csa-template",
+    "snowpack",
+    "rescript",
+    "react"
+  ],
+  "scripts": {
+    "postinstall": "bsb -make-world",
+    "start:re": "bsb -make-world -w",
+    "start:snowpack": "snowpack dev",
+    "start": "run-p start:**",
+    "build:re": "bsb -clean-world -make-world",
+    "build:snowpack": "snowpack build",
+    "build": "run-s build:**",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1"
+  },
+  "resolutions": {
+    "react": "0.0.0-experimental-27659559e",
+    "react-dom": "0.0.0-experimental-27659559e"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.10.1",
+    "bs-platform": "^8.4.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-react-refresh": "^2.4.0",
+    "npm-run-all": "^4.1.5",
+    "snowpack": "^3.0.1"
+  }
+}
