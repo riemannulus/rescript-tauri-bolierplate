@@ -1,10 +1,22 @@
 %%raw(`import './App.css';`)
 
+type t = {
+  cmd: string,
+  argument: string,
+}
 @bs.module("./logo.svg") external logo: string = "default"
+@bs.module("tauri/api/tauri") external myCustomCommand: t => unit = "invoke"
 
 @react.component
 let make = () => {
   let (count, setCount) = React.useState(() => 0)
+  React.useEffect1(() => {
+    myCustomCommand({
+      cmd: "myCustomCommand",
+      argument: "Hello Tauri!",
+    })
+    None
+  }, [])
 
   <div className="App">
     <header className="App-header">

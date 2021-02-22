@@ -11,9 +11,11 @@
     "postinstall": "bsb -make-world",
     "start:re": "bsb -make-world -w",
     "start:snowpack": "snowpack dev",
+    "start:tauri": "tauri dev",
     "start": "run-p start:**",
     "build:re": "bsb -clean-world -make-world",
     "build:snowpack": "snowpack build",
+    "build:tauri": "tauri build",
     "build": "run-s build:**",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1"
   },
@@ -24,8 +26,9 @@
   "dependencies": {
     "@rescript/react": "^0.10.1",
     "bs-platform": "^8.4.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": "experimental",
+    "react-dom": "experimental",
+    "tauri": "^0.14.1"
   },
   "devDependencies": {
     "@snowpack/plugin-react-refresh": "^2.4.0",
